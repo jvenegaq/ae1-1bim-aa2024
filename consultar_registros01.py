@@ -4,7 +4,7 @@ import pymongo
 # Conectar a MongoDB local
 try:
     client = pymongo.MongoClient('mongodb://localhost:27017/')
-    db = client['mi_base_de_datos']  # Reemplaza con el nombre de tu base de datos
+    db = client['mi_base_de_datos']  
 
     # Obtener todas las entradas de las colecciones LocalesComida y CentrosDeportivos
     locales_comida = db['LocalesComida'].find()
