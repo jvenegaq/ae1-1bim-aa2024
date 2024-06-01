@@ -3,7 +3,7 @@ import pymongo
 # Conectar a MongoDB local
 try:
     client = pymongo.MongoClient('mongodb://localhost:27017/')
-    db = client['mi_base_de_datos']  # Reemplaza con el nombre de tu base de datos
+    db = client['mi_base_de_datos']  
 
     print("Conexión a la base de datos establecida correctamente.")
 except pymongo.errors.ConnectionFailure as e:
