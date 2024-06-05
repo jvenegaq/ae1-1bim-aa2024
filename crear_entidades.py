@@ -19,21 +19,11 @@ class Estadio(Base):
     def __str__(self):
         return f"{self.nombre} ({self.ubicacion}) - Capacidad: {self.capacidad}, Tipo de césped: {self.tipo_césped}"
 
-# Crear las tablas en la base de datos
 Base.metadata.create_all(engine)
-
-# Crear una clase Session, desde el generador de clases de SQLAlchemy sessionmaker.
-Session = sessionmaker(bind=engine)  # Se usa el engine
-# Crear un objeto llamado session de tipo Session, que permite guardar, eliminar, actualizar y generar consultas a la base de datos.
+Session = sessionmaker(bind=engine)  
 session = Session()
-
-# Obtener todos los registros de la entidad Estadio.
-# Se hace uso del método query.
-# order_by permite ordenar la búsqueda, con base a las propiedades de la entidad
 lista_estadios = session.query(Estadio).order_by(Estadio.capacidad).all()
-# La variable lista_estadios tendrá un listado de objetos de tipo Estadio ordenados por la propiedad capacidad de la entidad
 
-# Se realiza un proceso iterativo para presentar la información de cada objeto.
 print("Estadios:")
 for estadio in lista_estadios:
     print(f"Nombre: {estadio.nombre}")
@@ -41,4 +31,4 @@ for estadio in lista_estadios:
     print(f"Tamaño: {estadio.tamaño}")
     print(f"Capacidad: {estadio.capacidad}")
     print(f"Tipo de césped: {estadio.tipo_césped}")
-    print()  # Para separar cada estadio con una línea en blanco
+    print()  
