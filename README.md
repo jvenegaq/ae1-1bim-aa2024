@@ -20,3 +20,5 @@
   * Genere consultas a la base de datos para obtener información de las entidades de la base de datos generada.
   * Confirme los cambios generados en el sistema de control de versiones.
 * Suba el enlace del repositorio
+
+* Se crea ramatres: Entidad "estadios"
