@@ -2,10 +2,10 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
-engine = create_engine('sqlite:///estadios.db')
+engine = create_engine('sqlite:///estadio.db')
 Base = declarative_base()
 class Estadio(Base):
-    __tablename__ = 'estadios'
+    __tablename__ = 'estadio'
     
     id = Column(Integer, primary_key=True, autoincrement=True)
     nombre = Column(String, nullable=False)
